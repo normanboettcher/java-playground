@@ -1,3 +1,5 @@
+[← All showcases](../README.md)
+
 # Your `updated_at` column isn't the problem. Your cursor is.
 
 A small, **deterministic** proof that cursor-based change detection silently loses data,
@@ -98,7 +100,7 @@ sees uncommitted rows. The poller runs in autocommit mode, so each poll is a fre
 
 ## Run it
 
-Requirements: Java 21, Maven 3.9+, Docker (for Testcontainers).
+Requirements: Java 25+, Maven 3.9+, Docker (for Testcontainers).
 
 ```bash
 mvn verify
