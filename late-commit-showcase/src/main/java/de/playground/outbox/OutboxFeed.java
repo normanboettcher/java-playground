@@ -1,4 +1,4 @@
-package com.example.latecommit;
+package de.playground.outbox;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

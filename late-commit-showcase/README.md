@@ -48,16 +48,16 @@ The real rule is:
 
 ## The scenarios
 
-All scenarios live in [`LateCommitScenarios`](src/test/java/com/example/latecommit/LateCommitScenarios.java)
+All scenarios live in [`LateCommitScenarios`](src/test/java/de/playground/outbox/LateCommitScenarios.java)
 and run unchanged against both databases.
 
 | # | Strategy | Late commit (A) | What it shows |
 |---|---|---|---|
-| 1 | [Timestamp cursor](src/main/java/com/example/latecommit/TimestampCursorFeed.java) | ❌ lost | The classic bug |
-| 2 | [Id cursor](src/main/java/com/example/latecommit/IdCursorFeed.java) | ❌ lost | Same bug, no clock involved |
-| 3 | [Look-back window](src/main/java/com/example/latecommit/LookBackWindowFeed.java) (5 s), short transaction | ✅ delivered | The common "fix" works ... |
+| 1 | [Timestamp cursor](src/main/java/de/playground/outbox/TimestampCursorFeed.java) | ❌ lost | The classic bug |
+| 2 | [Id cursor](src/main/java/de/playground/outbox/IdCursorFeed.java) | ❌ lost | Same bug, no clock involved |
+| 3 | [Look-back window](src/main/java/de/playground/outbox/LookBackWindowFeed.java) (5 s), short transaction | ✅ delivered | The common "fix" works ... |
 | 4 | Look-back window (5 s), transaction open for 60 s | ❌ lost | ... until a transaction outlives the window |
-| 5 | [Transactional outbox](src/main/java/com/example/latecommit/OutboxFeed.java) | ✅ delivered | No cursor to fall behind |
+| 5 | [Transactional outbox](src/main/java/de/playground/outbox/OutboxFeed.java) | ✅ delivered | No cursor to fall behind |
 
 The suite is **green when the documented behaviour happens**, including the broken behaviour.
 Every test is executable documentation of one failure mode or of its fix.

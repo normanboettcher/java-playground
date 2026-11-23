@@ -1,4 +1,4 @@
-package com.example.latecommit;
+package de.playground.outbox;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

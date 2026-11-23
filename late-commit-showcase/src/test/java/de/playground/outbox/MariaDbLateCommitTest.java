@@ -1,4 +1,4 @@
-package com.example.latecommit;
+package de.playground.outbox;
 
 import java.util.List;
 import org.testcontainers.containers.JdbcDatabaseContainer;
